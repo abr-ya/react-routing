@@ -1,8 +1,8 @@
-import React, {Component} from 'react'
-import './App.scss'
-import {Route} from 'react-router-dom'
-import About from './About/About'
-import Cars from './Cars/Cars'
+import React, {Component} from 'react';
+import './App.scss';
+import {Route} from 'react-router-dom';
+import About from './About/About';
+import Cars from './Cars/Cars';
 
 class App extends Component {
   render() {
@@ -17,17 +17,17 @@ class App extends Component {
             <li>
               <a href="/about">About</a>
             </li>
+            <li>
+              <a href="/cars">Cars</a>
+            </li>
           </ul>
         </nav>
 
         <hr/>
 
-        {/*localhost:3000*/}
         <Route path="/" exact render={() => <h1>Home Page</h1>} />
-
-        <About />
-
-        <Cars />
+        <Route path="/about" exact component={About} />
+        <Route path="/cars" exact component={Cars} />
       </div>
     );
   }
